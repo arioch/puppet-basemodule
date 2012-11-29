@@ -19,7 +19,7 @@ class basemodule::params {
       $pkg_ensure         = present
       $pkg_list           = ''
       $service_dep        = undef
-      $service_enable     = ''
+      $service_enable     = true
       $service_ensure     = running
       $service_hasrestart = ''
       $service_hasstatus  = ''
@@ -40,7 +40,7 @@ class basemodule::params {
       $pkg_ensure         = present
       $pkg_list           = ''
       $service_dep        = undef
-      $service_enable     = ''
+      $service_enable     = true
       $service_ensure     = running
       $service_hasrestart = ''
       $service_hasstatus  = ''
