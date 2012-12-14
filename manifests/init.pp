@@ -22,13 +22,10 @@ class basemodule (
   $service_name       = $::basemodule::params::service_name,
 ) inherits basemodule::params {
 
-  include basemodule::install
-  include basemodule::config
-  include basemodule::service
-
-  Class['basemodule::install'] ->
-  Class['basemodule::config'] ->
-  Class['basemodule::service']
+  class { 'basemodule::install': } ->
+  class { 'basemodule::config': } ~>
+  class { 'basemodule::service': } ->
+  Class['basemodule']
 
 }
 
