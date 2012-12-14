@@ -7,8 +7,8 @@ class basemodule::install {
 
   if $::basemodule::pkg_deps {
     package { $::awstats::pkg_deps:
-      ensure  => $::awstats::pkg_ensure,
-      require => $::awstats::pkg_list,
+      ensure => $::awstats::pkg_ensure,
+      before => Package[$::basemodule::pkg_list],
     }
   }
 }
