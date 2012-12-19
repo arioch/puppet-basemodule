@@ -11,8 +11,10 @@ class basemodule::config {
 
   file {
     $::basemodule::config_dir:
-      ensure => directory,
-      mode   => $::basemodule::config_dir_mode;
+      ensure  => directory,
+      mode    => $::basemodule::config_dir_mode,
+      purge   => $::basemodule::config_purge,
+      recurse => true;
 
     $::basemodule::log_dir:
       ensure => directory,

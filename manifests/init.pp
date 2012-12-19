@@ -5,6 +5,7 @@ class basemodule (
   $config_dir_mode    = $::basemodule::params::config_dir_mode,
   $config_file_mode   = $::basemodule::params::config_file_mode,
   $config_group       = $::basemodule::params::config_group,
+  $config_purge       = $::basemodule::params::config_purge,
   $config_user        = $::basemodule::params::config_user,
   $daemon_group       = $::basemodule::params::daemon_group,
   $daemon_user        = $::basemodule::params::daemon_user,

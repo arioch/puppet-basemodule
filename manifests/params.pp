@@ -10,6 +10,7 @@ class basemodule::params {
       $config_dir_mode    = '0755'
       $config_group       = 'root'
       $config_mode        = '0644'
+      $config_purge       = false
       $config_user        = 'root'
       $daemon_group       = ''
       $daemon_user        = ''
