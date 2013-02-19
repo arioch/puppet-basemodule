@@ -4,7 +4,7 @@ class basemodule::params {
   $manage_repo = false
 
   case $::operatingsystem {
-    'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon', 'Fedora': {
+    'RedHat': {
       $config_dir         = '/etc/basemodule'
       $config_dir_mode    = '0755'
       $config_dir_recurse = false
@@ -27,7 +27,7 @@ class basemodule::params {
       $service_name       = 'basemodule'
     }
 
-    'Debian', 'Ubuntu': {
+    'Debian': {
       $config_dir         = '/etc/basemodule'
       $config_dir_mode    = '0755'
       $config_dir_recurse = false
