@@ -1,13 +1,13 @@
 # = Class basemodule::params
 #
 class basemodule::params {
-
   $manage_repo = false
 
   case $::operatingsystem {
     'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon', 'Fedora': {
       $config_dir         = '/etc/basemodule'
       $config_dir_mode    = '0755'
+      $config_dir_recurse = false
       $config_group       = 'root'
       $config_mode        = '0644'
       $config_purge       = false
@@ -30,6 +30,7 @@ class basemodule::params {
     'Debian', 'Ubuntu': {
       $config_dir         = '/etc/basemodule'
       $config_dir_mode    = '0755'
+      $config_dir_recurse = false
       $config_file_mode   = '0644'
       $config_group       = 'root'
       $config_user        = 'root'

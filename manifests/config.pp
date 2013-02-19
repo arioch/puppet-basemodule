@@ -14,13 +14,12 @@ class basemodule::config {
       ensure  => directory,
       mode    => $::basemodule::config_dir_mode,
       purge   => $::basemodule::config_purge,
-      recurse => true;
+      recurse => $::basemodule::config_dir_recurse;
 
     $::basemodule::log_dir:
       ensure => directory,
       owner  => $::basemodule::daemon_user,
       group  => $::basemodule::daemon_group;
   }
-
 }
 
