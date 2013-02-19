@@ -2,7 +2,6 @@
 #
 class basemodule::preinstall {
   if $::basemodule::manage_repo {
-
     $apt_repo_key = ''
 
     case $::operatingsystem {

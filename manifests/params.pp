@@ -53,6 +53,5 @@ class basemodule::params {
       fail "Operating system ${::operatingsystem} is not supported yet."
     }
   }
-
 }
 

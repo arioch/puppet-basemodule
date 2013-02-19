@@ -23,11 +23,9 @@ class basemodule (
   $service_hasstatus  = $::basemodule::params::service_hasstatus,
   $service_name       = $::basemodule::params::service_name,
 ) inherits basemodule::params {
-
   class { 'basemodule::install': } ->
   class { 'basemodule::config': } ~>
   class { 'basemodule::service': } ->
-  Class['basemodule']
-
+  Class [ 'basemodule' ]
 }
 
