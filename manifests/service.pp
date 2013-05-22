@@ -1,4 +1,4 @@
-# = Class basemodule
+# = Class basemodule::service
 #
 class basemodule::service {
   if $::basemodule::service_dep {
