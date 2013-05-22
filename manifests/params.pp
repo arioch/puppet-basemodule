@@ -12,18 +12,18 @@ class basemodule::params {
       $config_mode        = '0644'
       $config_purge       = false
       $config_user        = 'root'
-      $daemon_group       = ''
-      $daemon_user        = ''
-      $log_dir            = ''
-      $pid_file           = ''
+      $daemon_group       = undef
+      $daemon_user        = undef
+      $log_dir            = undef
+      $pid_file           = undef
       $pkg_deps           = undef
       $pkg_ensure         = present
-      $pkg_list           = ''
+      $pkg_list           = undef
       $service_dep        = undef
       $service_enable     = true
       $service_ensure     = running
-      $service_hasrestart = ''
-      $service_hasstatus  = ''
+      $service_hasrestart = undef
+      $service_hasstatus  = undef
       $service_name       = 'basemodule'
     }
 
@@ -34,18 +34,18 @@ class basemodule::params {
       $config_file_mode   = '0644'
       $config_group       = 'root'
       $config_user        = 'root'
-      $daemon_group       = ''
-      $daemon_user        = ''
-      $log_dir            = ''
-      $pid_file           = ''
+      $daemon_group       = undef
+      $daemon_user        = undef
+      $log_dir            = undef
+      $pid_file           = undef
       $pkg_deps           = undef
       $pkg_ensure         = present
-      $pkg_list           = ''
+      $pkg_list           = undef
       $service_dep        = undef
       $service_enable     = true
       $service_ensure     = running
-      $service_hasrestart = ''
-      $service_hasstatus  = ''
+      $service_hasrestart = undef
+      $service_hasstatus  = undef
       $service_name       = 'basemodule'
     }
 
