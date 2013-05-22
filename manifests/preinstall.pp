@@ -1,4 +1,4 @@
-# = Class basemodule::preinstall
+# == Class basemodule::preinstall
 #
 class basemodule::preinstall {
   if $::basemodule::manage_repo {

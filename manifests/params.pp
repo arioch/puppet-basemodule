@@ -1,4 +1,4 @@
-# = Class basemodule::params
+# == Class basemodule::params
 #
 class basemodule::params {
   $manage_repo = false

@@ -1,4 +1,4 @@
-# = Class basemodule::install
+# == Class basemodule::install
 #
 class basemodule::install {
   package { $::basemodule::pkg_list:

@@ -1,4 +1,4 @@
-# = Class basemodule::config
+# == Class basemodule::config
 #
 class basemodule::config {
   File {
