@@ -1,7 +1,7 @@
 # == Class basemodule
 #
 # $config_dir::           Location of the main configuration directory.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $config_dir_mode::      Posix file mode for configuration directories.
 #                         Default: 0755.
@@ -14,40 +14,40 @@
 #                         Default: 0644.
 #
 # $config_group::         Posix group for configuration files.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $config_purge::         Whether or not to purge non-puppet managed files
 #                         contained in $config_dir.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $config_user::          Posix user for configuration files.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $daemon_group::         Unprivileged group to run daemon.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $daemon_user::          Unprivileged user to run daemon.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $log_dir::              Specify directory containing log files.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $manage_repo::          Add a custom package repository.
 #                         Default: false.
 #
 # $pid_file::             Specify where to save the pid file.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $pkg_deps::             Any dependencies that need to be resolved before
 #                         installing the main package.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $pkg_ensure::           Ensure state for packages.
 #                         Default: present.
 #
 # $pkg_list::             An array containing the main package and possibly
 #                         a number of dependencies.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $service_dep::          Specify the name of any dependent daemon.
 #                         Default: undef.
@@ -59,13 +59,13 @@
 #                         Default: running.
 #
 # $service_hasrestart::   Specify whether or not the init script has restart.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $service_hasstatus::    Specify whether or not the init script has status.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 # $service_name::         Specify the name of the init script.
-#                         Default: operating specific.
+#                         Default: operating system specific.
 #
 class basemodule (
   $config_dir         = $::basemodule::params::config_dir,
