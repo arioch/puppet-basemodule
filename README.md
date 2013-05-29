@@ -1,5 +1,10 @@
 # Puppet basemodule
 
+## Build status
+
+[![Build Status](https://travis-ci.org/arioch/puppet-basemodule.png?branch=master)](https://travis-ci.org/arioch/puppet-basemodule)
+
+
 ## Requirements
 
 * [concat](https://github.com/ripienaar/puppet-concat)
