@@ -4,8 +4,8 @@ class basemodule::preinstall {
   if $::basemodule::manage_repo {
     $apt_repo_key = ''
 
-    case $::operatingsystem {
-      'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon', 'Fedora': {
+    case $::osfamily {
+      'RedHat': {
         yumrepo { 'repo':
           descr    => 'descr',
           baseurl  => 'basurl',
@@ -15,7 +15,7 @@ class basemodule::preinstall {
         }
       }
 
-      'Debian', 'Ubuntu': {
+      'Debian': {
         apt::key { $apt_repo_key:
           ensure => present,
           notify => Exec['basemodule apt-get update'],
