@@ -10,6 +10,9 @@
 #                         directory contained in $config_dir.
 #                         Default: false.
 #
+# $config_file::          Location of the main configuration file.
+#                         Default: operating system specific.
+#
 # $config_file_mode::     Posix file mode for configuration files.
 #                         Default: 0644.
 #
@@ -71,6 +74,7 @@ class basemodule (
   $config_dir         = $::basemodule::params::config_dir,
   $config_dir_mode    = $::basemodule::params::config_dir_mode,
   $config_dir_recurse = $::basemodule::params::config_dir_recurse,
+  $config_file        = $::basemodule::params::config_file,
   $config_file_mode   = $::basemodule::params::config_file_mode,
   $config_group       = $::basemodule::params::config_group,
   $config_purge       = $::basemodule::params::config_purge,

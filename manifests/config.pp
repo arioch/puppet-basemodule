@@ -16,6 +16,12 @@ class basemodule::config {
       purge   => $::basemodule::config_purge,
       recurse => $::basemodule::config_dir_recurse;
 
+    $::basemodule::config_file:
+      ensure  => present,
+      mode    => $::basemodule::config_file_mode,
+      purge   => $::basemodule::config_purge,
+      recurse => $::basemodule::config_file_recurse;
+
     $::basemodule::log_dir:
       ensure => directory,
       owner  => $::basemodule::daemon_user,
