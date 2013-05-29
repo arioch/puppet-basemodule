@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Puppet-basemodule by arioch</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Puppet-basemodule</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/arioch/puppet-basemodule">View the Project on GitHub <small>arioch/puppet-basemodule</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/arioch/puppet-basemodule/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/arioch/puppet-basemodule/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/arioch/puppet-basemodule">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="puppet-basemodule" class="anchor" href="#puppet-basemodule"><span class="octicon octicon-link"></span></a>Puppet basemodule</h1>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li><a href="https://github.com/ripienaar/puppet-concat">concat</a></li>
+<li><a href="https://github.com/puppetlabs/puppetlabs-stdlib">stdlib</a></li>
+</ul><p>Debian only:</p>
+
+<ul>
+<li>Puppetlabs <a href="https://github.com/puppetlabs/puppetlabs-apt">apt module</a> or</li>
+<li>Camptocamp <a href="https://github.com/camptocamp/puppet-apt">apt module</a>
+</li>
+</ul><h2>
+<a name="tested-on" class="anchor" href="#tested-on"><span class="octicon octicon-link"></span></a>Tested on...</h2>
+
+<ul>
+<li>Debian 5 (Lenny)</li>
+<li>Debian 6 (Squeeze)</li>
+<li>CentOS 5</li>
+<li>CentOS 6</li>
+</ul><h2>
+<a name="example-usage" class="anchor" href="#example-usage"><span class="octicon octicon-link"></span></a>Example usage</h2>
+
+<h3>
+<a name="install-basemodule" class="anchor" href="#install-basemodule"><span class="octicon octicon-link"></span></a>Install basemodule</h3>
+
+<pre><code>node /box/ {
+  include basemodule
+}
+</code></pre>
+
+<h3>
+<a name="configure-basemodule" class="anchor" href="#configure-basemodule"><span class="octicon octicon-link"></span></a>Configure basemodule</h3>
+
+<pre><code>node /box/ {
+  class { 'basemodule':
+    pkg_ensure     =&gt; latest,
+    service_ensure =&gt; running,
+  }
+}
+</code></pre>
+
+<h3>
+<a name="manage-repository" class="anchor" href="#manage-repository"><span class="octicon octicon-link"></span></a>Manage repository</h3>
+
+<pre><code>node /box/ {
+  class { 'basemodule':
+    manage_repo =&gt; true,
+  }
+}
+</code></pre>
+
+<h2>
+<a name="development" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<h3>
+<a name="run-rspec-tests" class="anchor" href="#run-rspec-tests"><span class="octicon octicon-link"></span></a>Run RSpec tests</h3>
+
+<pre><code>$ bundle exec rake spec
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/arioch">arioch</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
