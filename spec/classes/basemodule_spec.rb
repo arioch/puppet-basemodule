@@ -28,13 +28,6 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: pkg_ensure' do
-    let (:facts) { debian_facts }
-    let (:params) { { :pkg_ensure => '_VALUE_' } }
-
-    it { should contain_package('basemodule').with_ensure('_VALUE_') }
-  end
-
   describe 'on Debian with parameter: config_file' do
     let (:facts) { debian_facts }
     let (:params) { { :config_file => '_VALUE_' } }
