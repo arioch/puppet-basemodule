@@ -39,77 +39,117 @@ describe 'basemodule', :type => :class do
     let (:facts) { debian_facts }
     let (:params) { { :config_file_mode => '_VALUE_' } }
 
-    it { should contain_file('/etc/basemodule/config.cfg').with_mode('_VALUE_') }
+    it {
+      should contain_file('/etc/basemodule/config.cfg').with(
+        'mode' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: config_group' do
     let (:facts) { debian_facts }
     let (:params) { { :config_group => '_VALUE_' } }
 
-    it { should contain_file('/etc/basemodule/config.cfg').with_group('_VALUE_') }
+    it {
+      should contain_file('/etc/basemodule/config.cfg').with(
+        'group' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: config_user' do
     let (:facts) { debian_facts }
     let (:params) { { :config_user => '_VALUE_' } }
 
-    it { should contain_file('/etc/basemodule/config.cfg').with_owner('_VALUE_') }
+    it {
+      should contain_file('/etc/basemodule/config.cfg').with(
+        'owner' => '_VALUE_'
+      )
+    }
   end
 
   #describe 'on Debian with parameter: daemon_group' do
   #  let (:facts) { debian_facts }
   #  let (:params) { { :daemon_group => '_VALUE_' } }
   #
-  #  it { should contain_file('/etc/default/basemodule').with_content(/_VALUE_/) }
+  #  it {
+  #    should contain_file('/etc/default/basemodule').with(
+  #      'content' => /_VALUE_/
+  #    )
+  #  }
   #end
 
   #describe 'on Debian with parameter: daemon_user' do
   #  let (:facts) { debian_facts }
   #  let (:params) { { :daemon_user => '_VALUE_' } }
   #
-  #  it { should contain_file('/etc/default/basemodule').with_content(/_VALUE_/) }
+  #  it {
+  #    should contain_file('/etc/default/basemodule').with(
+  #      'content' => /_VALUE_/
+  #    )
+  #  }
   #end
 
   describe 'on Debian with parameter: pkg_ensure' do
     let (:facts) { debian_facts }
     let (:params) { { :pkg_ensure => '_VALUE_' } }
 
-    it { should contain_package('basemodule').with_ensure('_VALUE_') }
+    it {
+      should contain_package('basemodule').with(
+        'ensure' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: pkg_list' do
     let (:facts) { debian_facts }
     let (:params) { { :pkg_list => '_VALUE_' } }
 
-    it { should contain_package('_VALUE_') }
+    it {
+      should contain_package('_VALUE_')
+    }
   end
 
   describe 'on Debian with parameter: service_enable' do
     let (:facts) { debian_facts }
     let (:params) { { :service_enable => '_VALUE_' } }
 
-    it { should contain_service('basemodule').with_enable('_VALUE_') }
+    it {
+      should contain_service('basemodule').with(
+        'enable' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: service_ensure' do
     let (:facts) { debian_facts }
     let (:params) { { :service_ensure => '_VALUE_' } }
 
-    it { should contain_service('basemodule').with_ensure('_VALUE_') }
+    it {
+      should contain_service('basemodule').with(
+        'ensure' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: service_hasstatus' do
     let (:facts) { debian_facts }
     let (:params) { { :service_hasstatus => '_VALUE_' } }
 
-    it { should contain_service('basemodule').with_hasstatus('_VALUE_') }
+    it {
+      should contain_service('basemodule').with(
+        'hasstatus' => '_VALUE_'
+      )
+    }
   end
 
   describe 'on Debian with parameter: service_name' do
     let (:facts) { debian_facts }
     let (:params) { { :service_name => '_VALUE_' } }
 
-    it { should contain_service('_VALUE_') }
+    it {
+      should contain_service('_VALUE_')
+    }
   end
 end
 
