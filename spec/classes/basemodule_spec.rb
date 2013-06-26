@@ -32,7 +32,11 @@ describe 'basemodule', :type => :class do
     let (:facts) { debian_facts }
     let (:params) { { :config_file => '_VALUE_' } }
 
-    it { should contain_file('_VALUE_').with_ensure('present') }
+    it { should contain_file('_VALUE_').with(
+        'ensure'  => 'present',
+        'content' => /Managed by Puppet/
+      )
+    }
   end
 
   describe 'on Debian with parameter: config_file_mode' do

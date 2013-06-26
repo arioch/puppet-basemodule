@@ -18,9 +18,7 @@ class basemodule::config {
 
     $::basemodule::config_file:
       ensure  => present,
-      mode    => $::basemodule::config_file_mode,
-      purge   => $::basemodule::config_purge,
-      recurse => $::basemodule::config_file_recurse;
+      content => template('basemodule/basemodule.conf.erb');
 
     $::basemodule::log_dir:
       ensure => directory,
