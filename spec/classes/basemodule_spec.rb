@@ -13,9 +13,9 @@ describe 'basemodule', :type => :class do
     let (:facts) { debian_facts }
 
     it { should create_class('basemodule') }
-    it { should include_class('basemodule::install') }
-    it { should include_class('basemodule::config') }
-    it { should include_class('basemodule::service') }
+    it { should contain_class('basemodule::install') }
+    it { should contain_class('basemodule::config') }
+    it { should contain_class('basemodule::service') }
 
     it { should contain_package('basemodule').with_ensure('present') }
     it { should contain_file('/etc/basemodule').with_ensure('directory') }
