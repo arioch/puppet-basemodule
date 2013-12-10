@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe 'basemodule', :type => :class do
-  let(:pre_condition) { '$concat_basedir = "/tmp"' }
+  let (:pre_condition) { '$concat_basedir = "/tmp"' }
+  let (:facts) { debian_facts }
   let (:params) {
     {
       :config_dir => '/etc/basemodule',
@@ -9,9 +10,7 @@ describe 'basemodule', :type => :class do
     }
   }
 
-  describe 'on Debian without parameters' do
-    let (:facts) { debian_facts }
-
+  describe 'without parameters' do
     it { should create_class('basemodule') }
     it { should contain_class('basemodule::install') }
     it { should contain_class('basemodule::config') }
@@ -28,9 +27,8 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: config_file' do
-    let (:facts) { debian_facts }
-    let (:params) { { :config_file => '_VALUE_' } }
+  describe 'with parameter: config_file' do
+    let (:params) { { :config_file => '/etc/basemodule/config.cfg' } }
 
     it { should contain_file('_VALUE_').with(
         'ensure'  => 'present',
@@ -39,8 +37,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: config_file_mode' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: config_file_mode' do
     let (:params) { { :config_file_mode => '_VALUE_' } }
 
     it {
@@ -50,8 +47,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: config_group' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: config_group' do
     let (:params) { { :config_group => '_VALUE_' } }
 
     it {
@@ -61,8 +57,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: config_user' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: config_user' do
     let (:params) { { :config_user => '_VALUE_' } }
 
     it {
@@ -72,8 +67,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  #describe 'on Debian with parameter: daemon_group' do
-  #  let (:facts) { debian_facts }
+  #describe 'with parameter: daemon_group' do
   #  let (:params) { { :daemon_group => '_VALUE_' } }
   #
   #  it {
@@ -83,8 +77,7 @@ describe 'basemodule', :type => :class do
   #  }
   #end
 
-  #describe 'on Debian with parameter: daemon_user' do
-  #  let (:facts) { debian_facts }
+  #describe 'with parameter: daemon_user' do
   #  let (:params) { { :daemon_user => '_VALUE_' } }
   #
   #  it {
@@ -94,8 +87,7 @@ describe 'basemodule', :type => :class do
   #  }
   #end
 
-  describe 'on Debian with parameter: pkg_ensure' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: pkg_ensure' do
     let (:params) { { :pkg_ensure => '_VALUE_' } }
 
     it {
@@ -105,8 +97,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: pkg_list' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: pkg_list' do
     let (:params) { { :pkg_list => '_VALUE_' } }
 
     it {
@@ -114,8 +105,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: service_enable' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: service_enable' do
     let (:params) { { :service_enable => '_VALUE_' } }
 
     it {
@@ -125,8 +115,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: service_ensure' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: service_ensure' do
     let (:params) { { :service_ensure => '_VALUE_' } }
 
     it {
@@ -136,8 +125,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: service_hasstatus' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: service_hasstatus' do
     let (:params) { { :service_hasstatus => '_VALUE_' } }
 
     it {
@@ -147,8 +135,7 @@ describe 'basemodule', :type => :class do
     }
   end
 
-  describe 'on Debian with parameter: service_name' do
-    let (:facts) { debian_facts }
+  describe 'with parameter: service_name' do
     let (:params) { { :service_name => '_VALUE_' } }
 
     it {
