@@ -30,7 +30,7 @@ describe 'basemodule', :type => :class do
   describe 'with parameter: config_file' do
     let (:params) { { :config_file => '/etc/basemodule/config.cfg' } }
 
-    it { should contain_file('_VALUE_').with(
+    it { should contain_file('/etc/basemodule/config.cfg').with(
         'ensure'  => 'present',
         'content' => /Managed by Puppet/
       )

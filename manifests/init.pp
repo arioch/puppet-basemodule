@@ -99,5 +99,8 @@ class basemodule (
   class { 'basemodule::config': } ~>
   class { 'basemodule::service': } ->
   Class [ 'basemodule' ]
+
+  validate_absolute_path ($config_dir)
+  validate_absolute_path ($config_file)
 }
 
