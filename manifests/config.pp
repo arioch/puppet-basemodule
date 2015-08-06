@@ -20,10 +20,11 @@ class basemodule::config {
       ensure  => present,
       content => template('basemodule/basemodule.conf.erb');
 
-    $::basemodule::log_dir:
+    'logdir':
       ensure => directory,
-      owner  => $::basemodule::daemon_user,
-      group  => $::basemodule::daemon_group;
+      group  => $::basemodule::daemon_group,
+      name   => $::basemodule::log_dir,
+      owner  => $::basemodule::daemon_user;
   }
 }
 

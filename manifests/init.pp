@@ -94,11 +94,11 @@ class basemodule (
   $service_hasstatus  = $::basemodule::params::service_hasstatus,
   $service_name       = $::basemodule::params::service_name,
 ) inherits basemodule::params {
-  class { 'basemodule::preinstall': } ->
-  class { 'basemodule::install': } ->
-  class { 'basemodule::config': } ~>
-  class { 'basemodule::service': } ->
-  Class [ 'basemodule' ]
+  class{'basemodule::preinstall':} ->
+  class{'basemodule::install':} ->
+  class{'basemodule::config':} ~>
+  class{'basemodule::service':} ->
+  Class['basemodule']
 
   validate_absolute_path ($config_dir)
   validate_absolute_path ($config_file)
