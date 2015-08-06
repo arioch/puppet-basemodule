@@ -2,12 +2,12 @@
   "name": "arioch-basemodule",
   "version": "0.0.0",
   "author": "Tom De Vylder",
-  "summary": "",
+  "summary": "A layout for puppetmodules",
   "license": "Apache License, Version 2.0",
-  "source": "",
-  "project_page": "",
-  "issues_url": "",
-  "description": "",
+  "source": "git://github.com/arioch/puppet-basemodule",
+  "project_page": "https://github.com/arioch/puppet-basemodule",
+  "issues_url": "https://github.com/arioch/puppet-basemodule/issues",
+  "description": "This layour is a POC of layout to be used internally when starting a new project",
   "tags": [],
   "operatingsystem_support": [
     {
