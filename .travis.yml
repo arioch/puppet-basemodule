@@ -7,8 +7,9 @@ rvm:
 
 matrix:
   allow_failures:
-    - rvm: 2.0.0
-      env: PUPPET_VERSION="2.7"
+    - env: PUPPET_VERSION="2.7"
+    - env: PUPPET_VERSION="3.7" FUTURE_PARSER="yes"
+    - env: PUPPET_VERSION="3.8" FUTURE_PARSER="yes"
 
 script:
   - bundle
@@ -19,9 +20,23 @@ env:
   - PUPPET_VERSION="3.0"
   - PUPPET_VERSION="3.1"
   - PUPPET_VERSION="3.2"
-
-branches:
-  only:
-    - master
-    - develop
-
+  - PUPPET_VERSION="3.3"
+  - PUPPET_VERSION="3.4"
+  - PUPPET_VERSION="3.5"
+  - PUPPET_VERSION="3.6"
+  - PUPPET_VERSION="3.7"
+  - PUPPET_VERSION="3.8"
+  - PUPPET_VERSION="3.0"
+  - PUPPET_VERSION="3.1"
+  - PUPPET_VERSION="3.2"
+  - PUPPET_VERSION="3.3"
+  - PUPPET_VERSION="3.4"
+  - PUPPET_VERSION="3.5"
+  - PUPPET_VERSION="3.6"
+  - PUPPET_VERSION="3.7"
+  - PUPPET_VERSION="3.7" FUTURE_PARSER="yes"
+  - PUPPET_VERSION="3.8"
+  - PUPPET_VERSION="3.8" FUTURE_PARSER="yes"
+  - PUPPET_VERSION="4.0"
+  - PUPPET_VERSION="4.1"
+  - PUPPET_VERSION="4.2"
