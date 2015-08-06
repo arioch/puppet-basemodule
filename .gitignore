@@ -1,6 +1,9 @@
-.DS_Store
-.bundle
+pkg/
 Gemfile.lock
-pkg
-spec/fixtures
-vendor
+vendor/
+spec/fixtures/
+.vagrant/
+.bundle/
+coverage/
+.idea/
+*.iml

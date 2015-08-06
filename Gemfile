@@ -1,21 +1,49 @@
-source 'https://rubygems.org'
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? "~> #{ENV['PUPPET_VERSION']}" : ['>= 2.7']
-gem 'puppet', puppetversion
-
-if puppetversion =~ /^3/
-  ## rspec-hiera-puppet is puppet 3 only
-  gem 'rspec-hiera-puppet', '>=1.0.0'
+def location_for(place, fake_version = nil)
+  if place =~ /^(git[:@][^#]*)#(.*)/
+    [fake_version, { :git => $1, :branch => $2, :require => false }].compact
+  elsif place =~ /^file:\/\/(.*)/
+    ['>= 0', { :path => File.expand_path($1), :require => false }]
+  else
+    [place, { :require => false }]
+  end
 end
 
-facterversion = ENV.key?('FACTER_VERSION') ? "~> #{ENV['FACTER_VERSION']}" : ['>= 1.7.1']
+group :development, :unit_tests do
+  gem 'rspec-core', '3.1.7',     :require => false
+  gem 'puppetlabs_spec_helper',  :require => false
+  gem 'simplecov',               :require => false
+  gem 'puppet_facts',            :require => false
+  gem 'json',                    :require => false
+  gem 'metadata-json-lint',      :require => false
+end
 
-gem 'facter', facterversion
+group :system_tests do
+  if beaker_version = ENV['BEAKER_VERSION']
+    gem 'beaker', *location_for(beaker_version)
+  end
+  if beaker_rspec_version = ENV['BEAKER_RSPEC_VERSION']
+    gem 'beaker-rspec', *location_for(beaker_rspec_version)
+  else
+    gem 'beaker-rspec',  :require => false
+  end
+  gem 'serverspec',                    :require => false
+  gem 'beaker-puppet_install_helper',  :require => false
+end
 
-gem 'rake'
-gem 'rspec'
-gem 'puppet-lint', '>=0.3.2'
-gem 'rspec-puppet', :git => 'https://github.com/rodjek/rspec-puppet.git'
-gem 'puppetlabs_spec_helper', '>=0.7.0'
-gem 'puppet-syntax'
 
+
+if facterversion = ENV['FACTER_GEM_VERSION']
+  gem 'facter', facterversion, :require => false
+else
+  gem 'facter', :require => false
+end
+
+if puppetversion = ENV['PUPPET_GEM_VERSION']
+  gem 'puppet', puppetversion, :require => false
+else
+  gem 'puppet', :require => false
+end
+
+# vim:ft=ruby
